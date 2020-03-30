@@ -2,11 +2,11 @@
 .data
 
 .text 
-	li 	$s1, 0x7fffffff
+	li 	$s1, 0x7fffffff 	#s? l?n nh?t 32bit
 	li 	$s2, 0x7fffffff
 START: 	 
 	li	$t0, 0  	 	#No Overflow is default status  
-	add  	$s3, $s1, $s2  
+	addu  	$s3, $s1, $s2  
 	xor 	$t1, $s1, $s2 		#Test if $s1 and $s2 have the same sign/ neu s1 va s2 cung dau 
 	
 	bltz 	$t1, EXIT 		#If not, exit  
