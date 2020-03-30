@@ -1,2 +1,2 @@
-# -Computer_Architecture_Lab
+# Computer_Architecture_Lab
 Exercise of computer architecture
