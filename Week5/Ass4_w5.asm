@@ -10,7 +10,7 @@ get_string:
 	li	$v0, 54
 	la	$a0, Message1
 	la	$a1, string
-	la	$a2, 30
+	la	$a2, 100
 	syscall                
 get_length:   
 	la  	$a0, string          # a0 = Address(string[0])  #do in chuoi mess1 nen a0 doc tu ki tu thu 2              
@@ -27,12 +27,9 @@ check_char:
 end_of_str:                              
 end_of_get_length: 
 print_length: 
-	move 	$t3, $v0
-	li 	$v0, 4    
-	la 	$a0, Message2    
-	syscall
-	li 	$v0, 1    
-	addi 	$a0, $t3, -1	    #do bi doc tu ki tu 1 ne phai tru di 1     
+	addi $a1, $v0, -1
+	li $v0, 56
+	la $a0, Message2
 	syscall
 	
 	 
