@@ -29,8 +29,8 @@ end_of_str:
 end_of_get_length: 
 print_length: 
 	move 	$t3, $v0
-	li 	$v0, 4    
-	la 	$a0, Message2    
+	li	$v0, 4
+	la	$a0, Message2
 	syscall
 	li 	$v0, 1    
 	addi 	$a0, $t3, -1	    #do bi doc tu ki tu 1 ne phai tru di 1     

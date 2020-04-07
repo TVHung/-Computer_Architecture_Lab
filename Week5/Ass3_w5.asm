@@ -1,7 +1,7 @@
 #Laboratory Exercise 5, Home Assignment 2 
 .data 
 	x:	.space 1000                     	# destination string x, empty 
-	y: 	.asciiz "Hung dep trai"                 	# source string y 
+	y: 	.asciiz "hungvnc"                 	# source string y 
  
 .text 
 	la	$a0, x					# gán dia chi cua chuoi x vao a0
