@@ -1,6 +1,6 @@
 #Laboratory Exercise 5, Home Assignment 3 
 .data 
-	string:      	.asciiz   
+	string:      	.asciiz "hung"   
 	Message1:	.asciiz "Nhap xau:" 
 	Message2:    	.asciiz "Do dai la: " 
 .text 

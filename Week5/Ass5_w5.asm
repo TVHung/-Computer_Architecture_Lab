@@ -25,7 +25,7 @@ start_read_char:
 	beq 	$v0, $s3, end_of_char 	# end if enter
 	beq 	$s4, $s2, end_of_char 	# end if length > 20
 	
-	sb 	$v0, 0($s1)		#read character in $v0
+	sb 	$v0, 0($s1)		
 	j 	start_read_char
 
 end_of_char:
@@ -36,7 +36,7 @@ print_resever:
 	li 	$v0, 11			# print character
 	lb 	$a0, 0($s1)		# load character in $a0
 	syscall
-	beq 	$s1, $s0, end		# if index = 0 then blanch end
+	beq 	$s1, $s0, end		# if index = 0 then blanch to end
 	addi 	$s1, $s1, -1		# i = i - 1
 	j 	print_resever		
 	
