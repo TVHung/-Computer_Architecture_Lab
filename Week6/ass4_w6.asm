@@ -1,5 +1,5 @@
 .data 
-	A: 	.word 7, -2, 5, 1, 5, 6, 7, 3, 6, 8, 8, 59, 5 
+	A: 	.word 3, -2, 8, 1, 6, 6, 2, 62, 6, 44, 8, 12, 5 
 	Aend:   .word   
 .text 
 main:       
@@ -11,15 +11,7 @@ after_sort:
 	li   	$v0, 10         	#exit             
 	syscall 
 end_main: 
-#-------------------------------------------------------------- 
-#procedure sort (ascending selection sort using pointer) 
-#register usage in sort program 
-#$a0 pointer to the first element in unsorted part 
-#$a1 pointer to the last element in unsorted part 
-#$t0 temporary place for value of last element 
-#$v0 pointer to max element in unsorted part 
-#$v1 value of max element in unsorted part 
-#-------------------------------------------------------------- 
+
 sort:       
 	beq   	$a0,$a1,done 		#single element list is sorted             
 	j   	max        		#call the max procedure 
@@ -31,12 +23,6 @@ after_max:
 	j   	sort  			#repeat sort for smaller list 
 done:       
 	j	after_sort 
-#----------------------------------------------------------------------- 
-#Procedure max 
-#function: fax the value and address of max element in the list 
-#$a0 pointer to first element 
-#$a1 pointer to last element 
-#----------------------------------------------------------------------- 
 max:  
 	addi 	$v0,$a0,0         	#init max pointer to first element   	#gan v0 la phan tu dau tien
 	lw    	$v1,0($v0)        	#init max value to first value  	#khoi tao gia tri cho max 
