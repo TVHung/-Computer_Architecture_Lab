@@ -5,7 +5,6 @@
 	cacSoNguyenTo:	.asciiz "Cac so nguyen to la: \n"
 	tieptuc:	.asciiz "\nBan co muon tiep tuc?\n1. Co\n0. Khong\n"
 	daucach:	.asciiz " "
-	khongtontai:	.asciiz "Khong ton tai so nguyen to trong khoang\n"
 	arrNguyenTo:	.word 100
 .text
 While:
@@ -46,7 +45,7 @@ NguyenToGiuaAVaB:
 		add 	$t0, $t2, $zero  	# $t0 = b
 	for1: 	
 		bgt   	$s0, $t0, done  	# Neu i > b, thoát
-		jal	KiemTraNguyenTo 	# Neu i<b thì kiem tra so nguyen so 
+		b	KiemTraNguyenTo 	# Neu i<b thì kiem tra so nguyen so 
 	tang:
 		addi 	$s0, $s0, 1 		# tang i thêm 1 
 		j    	for1 			# quay lai for 
@@ -54,8 +53,8 @@ NguyenToGiuaAVaB:
 		b	SauKhiTim
 KiemTraNguyenTo:
 	# Kiem tra i co phai so nguy to $s0
-	blt	$s0, 2, tang
-	beq  	$s0, 2, done2  			# Neu n < 2 thi khong phai so nguyen to thi kiem tra gia tri tiep theo
+	blt	$s0, 2, tang			# neu n < 2 thi chuyen sang so nguyen tiep theo
+	beq  	$s0, 2, done2  			# Neu n = 2 thi no là so nguyen so
 	beq	$s0, 4, tang			# Nei n = 4 thi khong phai so nguyen to thi kiem tra gia tri tiep theo
 		li	$t7, 2
 		addi  	$s1, $zero, 2 		# i = 2
